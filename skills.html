@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="skills.css">
+</head>
+<body>
+
+<!-- Top Navigation Tabs -->
+<nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+</nav>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <h2>Skills</h2>
+
+    <!-- Tab Buttons -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="tech-stack">Tech Stack</button>
+        <button class="tab-btn" data-tab="tools">Tools</button>
+        <button class="tab-btn" data-tab="methodologies">Methodologies</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content active" id="tech-stack">
+        <div class="skill-grid">
+            <div class="skill-box">Python</div>
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">C++</div>
+            <div class="skill-box">Java</div>
+            <div class="skill-box">JavaScript (Node.js)</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">Django / Flask / Bottle</div>
+            <div class="skill-box">Basic C#</div>
+            <div class="skill-box">.NET</div>
+            <div class="skill-box">Google Firebase (GCP)</div>
+            <div class="skill-box">Azure (academic)</div>
+            <div class="skill-box">SQL / Relational DBs</div>
+            <div class="skill-box">Firebase (cloud-based)</div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tools">
+        <div class="skill-grid">
+            <div class="skill-box">Git</div>
+            <div class="skill-box">GitHub</div>
+            <div class="skill-box">Jenkins</div>
+            <div class="skill-box">CI/CD Pipelines</div>
+            <div class="skill-box">Docker</div>
+            <div class="skill-box">JUnit</div>
+            <div class="skill-box">Unit Testing</div>
+            <div class="skill-box">PyTest</div>
+            <div class="skill-box">Microsoft Word</div>
+            <div class="skill-box">Microsoft Excel</div>
+            <div class="skill-box">Microsoft PowerPoint</div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="methodologies">
+        <div class="skill-grid">
+            <div class="skill-box">Agile / Scrum</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            tabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Show corresponding tab
+            const tab = btn.dataset.tab;
+            tabContents.forEach(content => {
+                content.id === tab ? content.classList.add('active') : content.classList.remove('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
